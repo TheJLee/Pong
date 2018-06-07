@@ -5,13 +5,13 @@ from Ball import Ball
 WINDOWWIDTH = 600
 WINDOWHEIGHT = 600
 FPS = 200
-
+PADDLEWIDTH = 15
 class App:
     def __init__(self):
         self.display = None
         self.clock = None
-        self.paddle1 = Paddle(WINDOWWIDTH/2,0)
-        self.paddle2 = Paddle(WINDOWWIDTH/2,WINDOWHEIGHT)
+        self.leftpaddle = Paddle(WINDOWWIDTH/2,0)
+        self.rightpaddle = Paddle(WINDOWWIDTH/2,WINDOWHEIGHT)
         self.ball = Ball(WINDOWWIDTH/2,WINDOWHEIGHT/2)
 
     def setup(self):
@@ -19,7 +19,7 @@ class App:
         self.display = pygame.display.set_mode((WINDOWWIDTH,WINDOWHEIGHT))
         pygame.display.set_caption('Pong')
         self.clock = pygame.time.Clock()
-        
+
     def play(self):
         self.setup()
         while True:
